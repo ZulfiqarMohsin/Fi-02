@@ -1,0 +1,1298 @@
+/* ==========================================================================
+   GLOBAL RESETS & FONTS
+   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "Nunito Sans", sans-serif;
+    color: #ffffff;
+}
+
+html,
+body {
+    height: 100vh;
+    min-height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
+    scrollbar-width: thin;
+    scrollbar-color: #c62828 transparent;
+    background: url('image/background.png') no-repeat center center fixed;
+    background-size: cover, cover;
+    position: relative;
+    z-index: -10;
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    background: rgba(255, 255, 255, 0);
+    /* white overlay */
+    backdrop-filter: blur(5px);
+    /* blur effect */
+    z-index: -9;
+}
+
+/* Main scrollbar for Webkit browsers */
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+    width: 0 !important;
+    background: transparent !important;
+    display: none !important;
+}
+
+/* For Firefox */
+html,
+body {
+    scrollbar-width: none !important;
+    scrollbar-color: transparent !important;
+}
+
+/* ==========================================================================
+   LAYOUT WRAPPER
+   ========================================================================== */
+.wrapper {
+    background-color: #ff0000ab;
+    backdrop-filter: blur(20px);
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    position: fixed;
+    text-align: center;
+    padding: 10px;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    transition: height 0.2s;
+}
+
+.wrapper a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.wrapper p {
+    display: flex;
+}
+
+.logo {
+    width: 40px;
+    height: 40px;
+}
+
+/* Responsive header for mobile */
+@media (max-width: 600px) {
+    .wrapper {
+        height: 48px;
+        min-height: 48px;
+        top: 0;
+        left: 0;
+        z-index: 100;
+    }
+
+    .logo {
+        width: 32px;
+        height: 32px;
+    }
+}
+
+/* ==========================================================================
+   ABOUT SECTION
+   ========================================================================== */
+.about {
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.815), rgba(0, 0, 0, 0.7)),
+        url(image/banner.jpg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 130px 250px 90px 250px;
+    width: 100vw;
+    box-sizing: border-box;
+    left: 0;
+}
+
+.about h1 {
+    font-weight: 700;
+    font-size: 38px;
+    line-height: 46px;
+    text-align: center;
+    color: #EBEAFF;
+    margin-bottom: 5px;
+}
+
+.about p {
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 20px;
+    color: #EBEAFF;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.about .table-head {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    font-weight: bolder;
+    gap: 30px;
+}
+
+.table-head>div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    white-space: nowrap;
+}
+
+.table-head img {
+    height: 35px;
+}
+
+.bonus-date {
+    background: rgba(40, 53, 147, 0.15);
+    border: 1px solid #1976d2;
+    box-sizing: border-box;
+    border-radius: 4px;
+    padding: 1px 5px;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    color: #8d9aff;
+}
+
+/* ==========================================================================
+   OFFER TABLE & ROWS
+   ========================================================================== */
+.offer {
+    position: relative;
+    /* background: linear-gradient(180deg, #FF2929 0%, #fff 50%, #3D3BF3 100%); */
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    padding: 10px 0px;
+    gap: 20px;
+    left: 0;
+    box-sizing: border-box;
+}
+
+.offer-table {
+    width: 90%;
+    margin: 0 auto;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: #0000005c;
+    border-radius: 8px 8px 0 0;
+    overflow: hidden;
+    border: 2px solid #ffffffab;
+}
+
+.offer-table th,
+.offer-table td {
+    padding: 20px;
+    text-align: center;
+    border-color: #ffffff;
+}
+
+.offer-table th {
+    background: #1e276d00;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.offer-table tr:not(:last-child) td,
+.offer-table td {
+    border-bottom: 1px solid #c62828;
+}
+
+.offer-table th:first-child,
+.offer-table td:first-child {
+    width: 35%;
+}
+
+.offer-table th:nth-child(3),
+.offer-table td:nth-child(3),
+.offer-table th:nth-child(4),
+.offer-table td:nth-child(4) {
+    border-left: none;
+    position: relative;
+}
+
+.offer-table td:nth-child(3)::before,
+.offer-table td:nth-child(4)::before {
+    content: "";
+    position: absolute;
+    left: 0%;
+    top: 15%;
+    height: 70%;
+    width: 1px;
+    background: linear-gradient(to bottom,
+            rgba(198, 40, 40, 0.1) 0%,
+            #c62828 30%,
+            #c62828 70%,
+            rgba(198, 40, 40, 0.1) 100%);
+    transform: translateX(-50%);
+}
+
+.offer-table th:nth-child(3)::before,
+.offer-table th:nth-child(4)::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    height: 0;
+    width: 0;
+}
+
+.offer-table tbody tr:hover {
+    background-color: #3949abcc;
+    transition: background 0.2s;
+    cursor: pointer;
+}
+
+/* ==========================================================================
+   OFFER FIRST COLUMN (SERIAL & IMAGE)
+   ========================================================================== */
+.offer-first-col {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    justify-content: center;
+    width: 100%;
+    min-width: 0;
+}
+
+.offer-serial {
+    border-radius: 0px 0px 20px 0px;
+    position: absolute;
+    padding-left: 10px;
+    top: 0;
+    left: 0;
+    min-width: 40%;
+    padding-right: 15px;
+    background-color: #007bff;
+    font-size: 20px;
+    font-weight: 700;
+    color: #ffffff;
+    min-width: 28px;
+    text-align: start;
+    flex-shrink: 0;
+}
+
+.offer-img-box {
+    width: 60px;
+    /* or your preferred width */
+    height: 60px;
+    /* or your preferred height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.offer-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* or 'cover' if you want to crop */
+    display: block;
+}
+
+/* Responsive tweaks for mobile */
+@media (max-width: 900px) {
+    .offer-first-col {
+        gap: 8px;
+    }
+
+    .offer-serial {
+        font-size: 16px;
+        min-width: 18px;
+    }
+}
+
+@media (max-width: 600px) {
+    .offer-first-col {
+        gap: 4px;
+    }
+
+    .offer-img-box {
+        border-radius: 6px;
+    }
+
+    .offer-img {
+        border-radius: 6px;
+    }
+}
+
+/* ==========================================================================
+   OFFER BONUS COLUMN
+   ========================================================================== */
+.offer-bonus {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+.bonus-percent {
+    font-size: 32px;
+    font-weight: 800;
+    color: #007bff;
+    margin: 0;
+    line-height: 1;
+}
+
+.bonus-desc {
+    font-size: 15px;
+    color: #e1e1e1;
+    margin: 0;
+    text-align: center;
+    font-weight: 400;
+    line-height: 1.4;
+}
+
+/* ==========================================================================
+   RATING COLUMN
+   ========================================================================== */
+.rating-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.rating-value {
+    font-weight: 800;
+    font-size: 33px;
+    color: #1bad00;
+    margin-right: 0;
+    display: block;
+}
+
+.stars {
+    display: flex;
+    vertical-align: middle;
+    margin: 0;
+    gap: 2px;
+}
+
+.star {
+    color: yellow;
+    font-size: 25px;
+    margin: 0;
+    padding: 0;
+    text-shadow: 0 0 2px #1976d2, 0 0 4px #c62828;
+}
+
+.votes {
+    color: #000000e5;
+    font-size: 13px;
+    font-weight: 900;
+    margin: 0;
+    vertical-align: middle;
+}
+
+.votes .votes-number {
+    font-weight: bold;
+    color: #ffffff;
+    margin-right: 3px;
+}
+
+/* ==========================================================================
+   BUTTONS & LINKS
+   ========================================================================== */
+.play-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 10px;
+    /* Adjust as needed */
+    width: 100%;
+    /* Optional: makes button fill the cell */
+    box-sizing: border-box;
+    border: none;
+    border-radius: 50px;
+    /* Optional: for rounded corners */
+    font-size: 1rem;
+    background: #007bff;
+    /* Example background */
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.1s linear;
+}
+
+.play-btn:hover {
+    transform: scale(1.07);
+    box-shadow: 0 6px 24px 0 rgba(25, 118, 210, 0.25), 0 1.5px 6px 0 #c62828;
+
+}
+
+.play-btn-link {
+    text-decoration: none;
+    display: inline-block;
+}
+
+.visit-link {
+    display: flex;
+    align-items: center;
+    margin-top: 8px;
+    color: #1976d2;
+    font-size: 13px;
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+    transition: color 0.2s;
+}
+
+.visit-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0;
+    height: 2px;
+    background: #c62828;
+    transition: width 0.3s ease;
+}
+
+.visit-link:hover::after {
+    width: 100%;
+}
+
+/* ==========================================================================
+   SUPPORT TABLE (IF USED)
+   ========================================================================== */
+.support-table {
+    width: 100%;
+    max-width: 420px;
+    margin: 24px auto;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: #e3eafc00;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgb(53, 53, 53);
+    font-size: 15px;
+}
+
+.support-table th,
+.support-table td {
+    padding: 12px 18px;
+    text-align: left;
+    color: #ffffff;
+    border-color: #ffffff;
+}
+
+.support-table th {
+    background: #ffffff36;
+    color: #fff;
+    font-weight: 700;
+    border-bottom: 2px solid #ffffff;
+}
+
+.support-table tr:not(:last-child) td {
+    border-bottom: 1px solid #aaaaaa;
+}
+
+.support-table tr:hover td {
+    background: #ffffff2c;
+    transition: background 0.2s;
+}
+
+.support-table a {
+    color: #ffffff98;
+    text-decoration: none;
+    position: relative;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.support-table a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0;
+    height: 1px;
+    background: #ffffff;
+    transition: width 0.3s ease;
+}
+
+.support-table a:hover::after {
+    width: 100%;
+}
+
+/* ==========================================================================
+   FACT & INFO BLOCKS
+   ========================================================================== */
+.fact,
+.new-info {
+    /* background: linear-gradient(90deg, #FF2929 0%, #fff 50%, #3D3BF3 100%); */
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+    padding: 10vh 0;
+    box-sizing: border-box;
+    left: 0;
+}
+
+.fact p {
+    margin: 30px 0 70px 0;
+    width: 60%;
+    border: 2px solid;
+    border-image: linear-gradient(to bottom,
+            #3D3BF3 0%,
+            #ffffff71 10%,
+            #FF2929 20%,
+            #FF2929 50%,
+            #FF2929 80%,
+            #ffffff71 90%,
+            #3D3BF3 100%);
+    border-image-slice: 1;
+    border-radius: 15px;
+    padding: 40px;
+    color: #EBEAFF;
+}
+
+.fact p,
+.fact.new-info p,
+.new-info p {
+    background: linear-gradient(90deg, transparent 0%, rgba(25, 118, 210, 0) 50%, transparent 100%);
+    border-radius: 12px;
+}
+
+.new-info {
+    /* background-color: #283593; */
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    padding: 4vh 0 6vh 0;
+    color: black;
+}
+
+ul {
+    padding: 0 10px;
+    list-style: none;
+}
+
+.new-info h1,
+.new-info h2,
+.new-info h3,
+.new-info li {
+    text-align: start;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: black;
+    font-weight: 800;
+    padding: 0 33px;
+}
+
+.new-info p {
+    margin: 12px 0 18px 0;
+    padding: 12px;
+    color: #000000;
+    text-align: start;
+}
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+footer {
+    background-color: #000000e6;
+    width: 100vw;
+    left: 0;
+    box-sizing: border-box;
+}
+
+footer .link {
+    padding: 30px 100px 0px 100px;
+    text-align: center;
+    font-size: 16px;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+footer .link p {
+    font-weight: 300;
+    color: #fff;
+}
+
+footer .link :last-child {
+    margin-top: 7vw;
+    width: 100%;
+}
+
+footer .copyright {
+    padding: 60px 40px;
+    text-align: center;
+    font-size: 13px;
+    color: #fff;
+}
+
+footer .copyright a {
+    text-decoration: none;
+    position: relative;
+    transition: color 0.2s;
+    color: #fff;
+}
+
+footer .copyright a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0;
+    height: 1px;
+    background: #ffffff;
+    transition: width 0.3s ease;
+}
+
+footer .copyright a:hover::after {
+    width: 100%;
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN
+   ========================================================================== */
+
+/* Small tablets and below */
+@media (max-width: 900px) {
+    .about {
+        padding: 120px 40px 30px 40px;
+    }
+
+    .offer-table {
+        width: 90%;
+    }
+
+    .fact,
+    .new-info {
+        padding: 4vh 1vw 4vh 1vw;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    .fact p,
+    .fact.new-info p,
+    .new-info p {
+        width: 95%;
+        padding: 18px;
+        font-size: 15px;
+    }
+
+    .new-info p {
+        margin: 20px 0 40px 0;
+    }
+
+    .bonus-percent {
+        font-size: 26px;
+    }
+
+    .play-btn {
+        width: 110px;
+        height: 44px;
+        font-size: 14px;
+        padding: 8px 10px;
+    }
+}
+
+/* Phones */
+@media (max-width: 600px) {
+    .custom-hr {
+        width: 100%;
+        margin: 0 0;
+        box-sizing: border-box;
+    }
+
+    html,
+    body {
+        width: 100vw;
+        overflow-x: hidden;
+    }
+
+    .wrapper {
+        height: 55px;
+        min-height: 48px;
+        top: 0;
+        left: 0;
+        z-index: 100;
+    }
+
+    .logo {
+        width: 32px;
+        height: 32px;
+    }
+
+    .about,
+    .offer,
+    .fact,
+    .new-info,
+    footer {
+        padding-left: 8px !important;
+        padding-right: 8px !important;
+        box-sizing: border-box;
+        width: 100vw;
+        text-align: center;
+    }
+
+    .about {
+        padding: 80px 8px 20px 8px;
+        font-size: 15px;
+    }
+
+    .about h1 {
+        font-size: 22px;
+        line-height: 28px;
+    }
+
+    .about p {
+        font-size: 13px;
+        line-height: 18px;
+    }
+
+    .about .table-head {
+        flex-direction: column;
+        gap: 10px;
+        font-size: 11px;
+    }
+
+    .offer-table {
+        font-size: 13px;
+        margin: 0 auto;
+        box-sizing: border-box;
+    }
+
+    .offer-table th:first-child,
+    .offer-table td:first-child {
+        width: 18vw;
+        min-width: 54px;
+        max-width: 80px;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .offer-table th:nth-child(2),
+    .offer-table td:nth-child(2) {
+        width: 28vw;
+        min-width: 70px;
+        max-width: 120px;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .offer-table th,
+    .offer-table td {
+        padding: 8px 2px;
+        font-size: 13px;
+    }
+
+    .offer-first-col {
+        gap: 6px;
+    }
+
+    .offer-serial {
+        font-size: 15px;
+        min-width: 18px;
+    }
+
+    .bonus-percent {
+        font-size: 18px;
+    }
+
+    .bonus-desc {
+        font-size: 12px;
+    }
+
+    .rating-value {
+        font-size: 18px;
+    }
+
+    .star {
+        font-size: 13px;
+    }
+
+    .votes {
+        font-size: 11px;
+    }
+
+    .play-btn {
+        font-size: 11px;
+        padding: 3px 2px;
+        border-radius: 18px;
+    }
+
+    .visit-link {
+        font-size: 11px;
+        padding: 1px 4px;
+    }
+
+    .fact,
+    .new-info {
+        padding: 4vh 0 4vh 0;
+    }
+
+    .fact p,
+    .fact.new-info p,
+    .new-info p {
+        width: 99%;
+        padding: 10px;
+        margin: 10px 0 20px 0;
+    }
+
+    footer {
+        display: block;
+        width: 100vw;
+        box-sizing: border-box;
+    }
+
+    footer .link {
+        width: 100%;
+        order: 2;
+        position: static;
+        margin-bottom: 12px;
+        display: block;
+        padding: 7vw 3vw;
+    }
+
+    footer .copyright {
+        width: 100%;
+        order: 3;
+        position: static;
+        padding: 7vw 3vw;
+    }
+
+    footer .link,
+    .contact-info,
+    footer .copyright {
+        width: 100%;
+        margin: 0 auto;
+        display: block;
+        position: static;
+        box-sizing: border-box;
+        z-index: auto;
+    }
+
+    h1,
+    h2,
+    h3 {
+        padding: 0 0;
+
+    }
+
+    .new-info h1,
+    .new-info h2,
+    .new-info h3,
+    .new-info li {
+        padding: 0 15px;
+    }
+}
+
+/* Extra small devices */
+@media (max-width: 400px) {
+    .about h1 {
+        font-size: 16px;
+        line-height: 20px;
+    }
+
+    .offer-table th,
+    .offer-table td {
+        font-size: 11px;
+        padding: 4px 1px;
+    }
+
+    .play-btn {
+        width: 90px;
+        height: 40px;
+        font-size: 8px;
+        padding: 3px 2px;
+        border-radius: 18px;
+    }
+}
+
+/* ==========================================================================
+   LOGO SECTION
+   ========================================================================== */
+.logo-section {
+    width: 100vw;
+    background: #000000e6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 0 45px 0;
+}
+
+.logo-section .logo {
+    display: flex;
+    flex-direction: row;
+    padding-top: 15px;
+    gap: 24px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.logo-section .logo a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-section .logo img {
+    width: 8vw;
+    height: 8vw;
+    object-fit: contain;
+    display: block;
+    background: transparent;
+    border-radius: 8px;
+    border: 2px solid #28349300;
+    background: #28349300;
+}
+
+.logo-section .logo img.footer-logo-link-18 {
+    width: 10vw;
+    height: 10vw;
+    border: 2px solid #28349300;
+    background: #28349300;
+}
+
+@media (max-width: 600px) {
+    .logo-section {
+        padding: 16px 0 4px 0;
+    }
+
+    .logo-section .logo {
+        gap: 10px;
+        flex-wrap: nowrap;
+    }
+
+    .logo-section .logo img,
+    .logo-section .logo img.footer-logo-link-18 {
+        width: 10vw;
+        height: 10vw;
+    }
+}
+
+/* ==========================================================================
+   GRADIENT BACKGROUND SECTIONS
+   ========================================================================== */
+.gradient-bg {
+    /* Blue to Red, then Red to Blue, with Blue in the middle for smooth transition */
+    background: linear-gradient(180deg, #3D3BF3 0%, #3D3BF3 30%, #FF2929 60%, #3D3BF3 100%) !important;
+}
+
+/* Alternate gradient for seamless transition (Red to Blue, then Blue to Red) */
+.gradient-bg.reverse {
+    background: linear-gradient(180deg, #FF2929 0%, #3D3BF3 40%, #3D3BF3 70%, #FF2929 100%) !important;
+}
+
+.gradient-bg.logo {
+    background: linear-gradient(180deg, #FF2929 0%, #FF2929 40%, #FF2929 70%, #FF2929 100%) !important;
+}
+
+/* ==========================================================================
+   OFFER GRID REPLACEMENT
+   ========================================================================== */
+.offer-grid {
+    display: grid;
+    grid-template-columns: 3fr 3fr 2fr 2fr;
+    gap: 0;
+    width: 90%;
+    margin: 0 auto;
+    padding: 0 0;
+    border-radius: 8px;
+    overflow-y: auto;
+    /* Enable vertical scroll if content overflows */
+    overflow-x: hidden;
+    background: #0000005c;
+    border: none;
+    align-items: stretch;
+    height: 420px;
+    /* Set your desired fixed height */
+    max-height: 420px;
+    /* Prevent growing beyond this height */
+    box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.747), 0 1.5px 8px 0 #000000b9;
+}
+
+.offer-row {
+    display: contents;
+}
+
+.offer-grid-header,
+.offer-cell {
+    padding: 12px;
+    border-bottom: 1px solid #00000022;
+    border-right: 1px solid #ffffff22;
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100px;
+    box-sizing: border-box;
+    text-align: center;
+    height: 100%;
+}
+
+/* Mobile: use flex for each offer-row */
+@media (max-width: 900px) {
+    .offer-grid {
+        display: block;
+        width: 98%;
+        padding: 0;
+    }
+
+    .offer-grid-header {
+        display: none;
+    }
+
+    .offer-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        width: 100%;
+        border-bottom: 1px solid #c62828;
+    }
+
+    .offer-row .offer-cell {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        border-right: 1px solid #ffffff22;
+        border-bottom: none;
+        box-sizing: border-box;
+        padding: 16px 8px;
+        min-height: 100px;
+        width: 100%;
+        height: 100%;
+    }
+
+    .offer-row .offer-cell:nth-child(2n) {
+        border-right: none;
+    }
+
+    .offer-row .offer-cell:nth-child(1) {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .offer-row .offer-cell:nth-child(2) {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    .offer-row .offer-cell:nth-child(3) {
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+    .offer-row .offer-cell:nth-child(4) {
+        grid-column: 2;
+        grid-row: 2;
+    }
+}
+
+/* ==========================================================================
+   CONTACT INFO SECTION
+   ========================================================================== */
+.contact-info {
+    padding: 30px 100px 0 100px;
+    text-align: center;
+    font-size: 16px;
+    color: #fff;
+}
+
+@media (max-width: 900px) {
+    .contact-info {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 600px) {
+    .contact-info {
+        padding: 7vw 3vw 0 3vw;
+    }
+}
+
+/* Add this to give .contact-info a links the same hover effect as .copyright a */
+.contact-info a {
+    color: #ffffffb7;
+    text-decoration: none;
+    position: relative;
+    transition: color 0.2s;
+}
+
+.contact-link {
+    display: flex;
+    justify-content: center;
+}
+
+.contact-link a {
+    flex-direction: row;
+}
+
+.contact-info a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0;
+    height: 1px;
+    background: #ffffff;
+    transition: width 0.3s ease;
+}
+
+.contact-info a:hover::after {
+    width: 100%;
+}
+
+/* Style contact-info links in a beautiful box */
+.contact-info .contact-links {
+    display: inline-block;
+    background: rgba(40, 53, 147, 0.15);
+    border: 1.5px solid #8d9aff;
+    border-radius: 12px;
+    padding: 10px 50px;
+    margin-top: 18px;
+    margin-bottom: 8px;
+    box-shadow: 0 2px 12px 0 rgba(40, 53, 147, 0.08);
+    text-align: left;
+}
+
+.contact-info .contact-links a {
+    display: block;
+    margin: 0 0;
+    font-size: 1em;
+    color: #fff;
+    text-decoration: none;
+    position: relative;
+    transition: color 0.2s;
+    padding: 10px;
+}
+
+.contact-info .contact-links a::before {
+    content: attr(data-icon);
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 1.2em;
+    line-height: 1.2;
+}
+
+.contact-info .contact-links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0;
+    height: 1.5px;
+    background: #8d9aff;
+    transition: width 0.3s ease;
+}
+
+.contact-info .contact-links a:hover {
+    color: #8d9aff;
+}
+
+.contact-info .contact-links a:hover::after {
+    width: 100%;
+}
+
+@media (max-width: 600px) {
+    .contact-info .contact-links {
+        padding: 12px 8px;
+        font-size: 1em;
+    }
+
+    .contact-info {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+}
+
+.offer-grid-header {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background: #0000009c !important;
+    min-height: 40px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    font-size: 15px;
+    color: #fff !important;
+    border-bottom: 1px solid #000 !important;
+    border-right: 1px solid #000 !important;
+}
+
+/* Make grid cell backgrounds white and text black */
+.offer-cell {
+    position: relative;
+    background: #9797971a !important;
+    color: #111 !important;
+}
+
+.offer-cell-first {
+    background-color: white !important;
+}
+
+/* Remove background and color override for header */
+.offer-grid-header {
+    background: #000000b5 !important;
+    color: #fff !important;
+    border-bottom: 1px solid #000 !important;
+    border-right: 1px solid #000 !important;
+}
+
+/* Remove right border from last cell in each row */
+.offer-row .offer-cell:last-child {
+    border-right: none !important;
+}
+
+/* Remove bottom border from last row cells if needed */
+.offer-grid .offer-row:last-child .offer-cell {
+    border-bottom: none !important;
+}
+
+@media (max-width: 940px) {
+    .play-btn {
+        padding: 8px 8px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 540px) {
+    .wrapper a {
+        font-size: 10px;
+    }
+}
