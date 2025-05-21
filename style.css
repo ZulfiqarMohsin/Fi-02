@@ -38,7 +38,7 @@ body::after {
     width: 100vw;
     height: 100vh;
     pointer-events: none;
-    background: rgba(255, 255, 255, 0);
+    background: rgba(0, 0, 0, 0.082);
     /* white overlay */
     backdrop-filter: blur(5px);
     /* blur effect */
@@ -430,6 +430,7 @@ body {
     align-items: center;
     justify-content: center;
     padding: 12px 10px;
+    line-height: 14px;
     /* Adjust as needed */
     width: 100%;
     /* Optional: makes button fill the cell */
@@ -707,7 +708,7 @@ footer .copyright a:hover::after {
     .new-info p {
         width: 95%;
         padding: 18px;
-        font-size: 15px;
+        font-size: 20px;
     }
 
     .new-info p {
@@ -833,9 +834,9 @@ footer .copyright a:hover::after {
         font-size: 12px;
     }
 
-    .rating-value {
+    /* .rating-value {
         font-size: 18px;
-    }
+    } */
 
     .star {
         font-size: 13px;
@@ -1287,7 +1288,7 @@ footer .copyright a:hover::after {
 @media (max-width: 940px) {
     .play-btn {
         padding: 8px 8px;
-        font-size: 0.9rem;
+        font-size: 0.88rem;
     }
 }
 
