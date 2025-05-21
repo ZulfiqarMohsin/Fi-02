@@ -431,19 +431,18 @@ body {
     justify-content: center;
     padding: 12px 10px;
     line-height: 14px;
-    /* Adjust as needed */
     width: 100%;
-    /* Optional: makes button fill the cell */
     box-sizing: border-box;
     border: none;
     border-radius: 50px;
-    /* Optional: for rounded corners */
     font-size: 1rem;
-    background: #007bff;
-    /* Example background */
-    color: #fff;
+    background: linear-gradient(135deg, #0080ff 0%, #148aff 80%, #48a3ff 100%);
+    color: #ffffff;
     cursor: pointer;
-    transition: all 0.1s linear;
+    transition: all 0.2s linear, box-shadow 0.2s;
+    box-shadow: 0 0 10px 2px #1976d2a0, 0 2px 8px 0 #3399ffa0;
+    font-weight: bold;
+    /* Glow effect always visible, not just on hover */
 }
 
 .play-btn:hover {
